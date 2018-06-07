@@ -723,6 +723,10 @@ function askForField(done) {
                         {
                             name: 'Annotation @FilterPL',
                             value: 'filterpl'
+                        },
+                        {
+                            name: 'Annotation @IgnorePL',
+                            value: 'ignorepl'
                         }
                     );
                 } else if (['Integer', 'Long', 'Float', 'Double', 'BigDecimal'].includes(response.fieldType)) {
@@ -742,6 +746,10 @@ function askForField(done) {
                         {
                             name: 'Annotation @IdPL',
                             value: 'idpl'
+                        },
+                        {
+                            name: 'Annotation @IgnorePL',
+                            value: 'ignorepl'
                         }
                     );
                 } else if (response.fieldType === 'byte[]' && response.fieldTypeBlobContent !== 'text') {

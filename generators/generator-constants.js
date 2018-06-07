@@ -69,7 +69,7 @@ const TEST_DIR = 'src/test/';
 // Note: this will be prepended with 'target/' for Maven, or with 'build/' for Gradle.
 const CLIENT_DIST_DIR = 'www/';
 
-const SUPPORTED_VALIDATION_RULES = ['required', 'unique', 'max', 'min', 'maxlength', 'minlength', 'maxbytes', 'minbytes', 'pattern', 'filterpl', 'idpl'];
+const SUPPORTED_VALIDATION_RULES = ['required', 'unique', 'max', 'min', 'maxlength', 'minlength', 'maxbytes', 'minbytes', 'pattern', 'filterpl', 'idpl', 'ignorepl'];
 
 // documentation constants
 const JHIPSTER_DOCUMENTATION_URL = 'https://www.jhipster.tech';

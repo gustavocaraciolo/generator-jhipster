@@ -72,6 +72,9 @@ if (field.fieldValidate === true) {
     if (rules.includes('idpl')) {
         validators.push('@IdPL');
     }
+    if (rules.includes('ignorepl')) {
+        validators.push('@IgnorePL');
+    }
     result =  validators.join('\n    ');
     result += '\n';
 } -%>
