@@ -727,6 +727,10 @@ function askForField(done) {
                         {
                             name: 'Annotation @IgnorePL',
                             value: 'ignorepl'
+                        },
+                        {
+                            name: 'Annotation @TypePL',
+                            value: 'typepl'
                         }
                     );
                 } else if (['Integer', 'Long', 'Float', 'Double', 'BigDecimal'].includes(response.fieldType)) {
@@ -850,6 +854,15 @@ function askForField(done) {
             name: 'fieldValidateRulesPattern',
             message: 'What is the regular expression pattern you want to apply on your field?',
             default: '^[a-zA-Z0-9]*$'
+        },
+        {
+            when: response => response.fieldAdd === true &&
+                response.fieldValidate === true &&
+                response.fieldValidateRules.includes('typepl'),
+            type: 'input',
+            name: 'fieldValidateRulesPatternJava',
+            message: 'Qual o nome do type que deseja adicionar?',
+            default: ''
         }
     ];
     this.prompt(prompts).then((props) => {

@@ -75,6 +75,9 @@ if (field.fieldValidate === true) {
     if (rules.includes('ignorepl')) {
         validators.push('@IgnorePL');
     }
+    if (rules.includes('typepl')) {
+        validators.push('@PlType(name = "' + field.fieldValidateRulesPatternJava  + '")');
+    }
     result =  validators.join('\n    ');
     result += '\n';
 } -%>
