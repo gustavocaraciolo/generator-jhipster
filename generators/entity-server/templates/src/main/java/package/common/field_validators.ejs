@@ -69,6 +69,9 @@ if (field.fieldValidate === true) {
     if (rules.includes('filterpl')) {
         validators.push('@FilterPL');
     }
+    if (rules.includes('idpl')) {
+        validators.push('@IdPL');
+    }
     result =  validators.join('\n    ');
     result += '\n';
 } -%>

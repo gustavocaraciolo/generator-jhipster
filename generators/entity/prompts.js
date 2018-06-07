@@ -719,6 +719,10 @@ function askForField(done) {
                         {
                             name: 'Regular expression pattern',
                             value: 'pattern'
+                        },
+                        {
+                            name: 'Annotation @FilterPL',
+                            value: 'filterpl'
                         }
                     );
                 } else if (['Integer', 'Long', 'Float', 'Double', 'BigDecimal'].includes(response.fieldType)) {
@@ -730,6 +734,14 @@ function askForField(done) {
                         {
                             name: 'Maximum',
                             value: 'max'
+                        },
+                        {
+                            name: 'Annotation @FilterPL',
+                            value: 'filterpl'
+                        },
+                        {
+                            name: 'Annotation @IdPL',
+                            value: 'idpl'
                         }
                     );
                 } else if (response.fieldType === 'byte[]' && response.fieldTypeBlobContent !== 'text') {
