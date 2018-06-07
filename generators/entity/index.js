@@ -336,6 +336,9 @@ module.exports = class extends BaseGenerator {
                         if (_.includes(field.fieldValidateRules, 'pattern') && _.isUndefined(field.fieldValidateRulesPattern)) {
                             this.error(chalk.red(`fieldValidateRulesPattern is missing in .jhipster/${entityName}.json for field ${JSON.stringify(field, null, 4)}`));
                         }
+                        if (_.includes(field.fieldValidateRules, 'typepl') && _.isUndefined(field.fieldTypePL)) {
+                            this.error(chalk.red(`fieldTypePL is missing in .jhipster/${entityName}.json for field ${JSON.stringify(field, null, 4)}`));
+                        }
                         if (field.fieldType === 'byte[]' || field.fieldType === 'ByteBuffer') {
                             this.warning(chalk.red(`Cannot use validation in .jhipster/${entityName}.json for field ${JSON.stringify(field, null, 4)} \nHibernate JPA 2 Metamodel does not work with Bean Validation 2 for LOB fields, so LOB validation is disabled`));
                             field.validation = false;
@@ -567,6 +570,11 @@ module.exports = class extends BaseGenerator {
                     if (_.isUndefined(field.fieldValidateRulesPatternJava)) {
                         field.fieldValidateRulesPatternJava = field.fieldValidateRulesPattern ?
                             field.fieldValidateRulesPattern.replace(/\\/g, '\\\\').replace(/"/g, '\\"') : field.fieldValidateRulesPattern;
+                    }
+
+                    if (_.isUndefined(field.fieldTypePL)) {
+                        field.fieldTypePL = field.fieldTypePL ?
+                            field.fieldTypePL.replace(/\\/g, '\\\\').replace(/"/g, '\\"') : field.fieldTypePL;
                     }
 
                     if (_.isArray(field.fieldValidateRules) && field.fieldValidateRules.length >= 1) {

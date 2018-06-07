@@ -860,7 +860,7 @@ function askForField(done) {
                 response.fieldValidate === true &&
                 response.fieldValidateRules.includes('typepl'),
             type: 'input',
-            name: 'fieldValidateRulesPatternJava',
+            name: 'fieldTypePL',
             message: 'Qual o nome do type que deseja adicionar?',
             default: ''
         }
